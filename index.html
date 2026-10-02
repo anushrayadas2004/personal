@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Boyfriend's Day ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button id="music-toggle" class="music-toggle" type="button" aria-live="polite">
+        <span id="music-label">♫ Hawayein</span>
+        <span id="music-state" aria-hidden="true">🔊</span>
+    </button>
+    <button id="restart-btn" class="restart-button" type="button" aria-label="Restart website from the beginning">Restart</button>
+    <audio id="our-song" preload="auto"></audio>
+
+    <main>
+        <section id="intro-section" class="screen" data-music="intro" aria-labelledby="intro-title"><div class="content-panel intro-panel">
+            <p class="eyebrow">A very important announcement</p><div class="intro-mark" aria-hidden="true">♥</div>
+            <h2 id="intro-title">HEY, BOYFRIEND.</h2>
+            <p class="lead">I made something for you.</p>
+            <p id="intro-note" class="muted" aria-live="polite">Don't get excited.<br>It's not an apology letter. 😌</p>
+            <button id="start-btn" class="button button-primary">DON'T CLICK <span aria-hidden="true">👀</span></button>
+        </div></section>
+
+        <section id="quiz-section" class="screen is-hidden" data-music="quiz" aria-labelledby="quiz-question"><div class="content-panel quiz-panel">
+            <p class="eyebrow">Boyfriend quiz <span id="question-number">1</span> / 5</p>
+            <div class="progress-track" aria-hidden="true"><span id="quiz-progress"></span></div>
+            <p class="muted quiz-note">Let's see how well you know yourself. Choose carefully. 😌</p>
+            <h2 id="quiz-question"></h2><div id="answers" class="answers"></div>
+            <p id="quiz-reaction" class="reaction" aria-live="polite"></p>
+            <button id="next-btn" class="button button-primary" disabled>Next <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="result-section" class="screen is-hidden" aria-labelledby="result-title"><div class="content-panel result-panel">
+            <p class="eyebrow">Your result</p><div class="trophy" aria-hidden="true">🏆</div>
+            <h2 id="result-title">100% BOYFRIEND CERTIFIED™</h2>
+            <p class="lead">Congratulations.<br>Unfortunately, you're stuck with me. 😌</p>
+            <p class="muted"><em>And yes, you got some answers wrong. I'm choosing to forgive you.</em></p>
+            <p id="quiz-email-status" class="muted" aria-live="polite">Your answers will be ready to email after you submit the quiz.</p>
+            <button class="button button-primary next-screen" data-next="starter-section">Continue <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="starter-section" class="screen is-hidden" data-music="starter" aria-labelledby="starter-title"><div class="content-panel wide-panel">
+            <p class="eyebrow">A rare and highly specific species</p><h2 id="starter-title">THE OFFICIAL BOYFRIEND STARTER PACK™</h2>
+            <div class="starter-grid">
+                <article class="trait" data-starter="meal"><span data-starter-icon>🍚</span><h3 data-starter-title>Biryani</h3><p data-starter-note>Emergency food supply</p></article>
+                <article class="trait" data-starter="choice"><span data-starter-icon>♥</span><h3 data-starter-title>Me</h3><p data-starter-note>Your choice right now</p></article>
+                <article class="trait" data-starter="phrase"><span data-starter-icon>🗣️</span><h3 data-starter-title>All three</h3><p data-starter-note>Gadhi • Murkha • Kaleshi Aurat</p></article>
+                <article class="trait" data-starter="obsession"><span data-starter-icon>🎮</span><h3 data-starter-title>Game</h3><p data-starter-note>Your current obsession</p></article>
+                <article class="trait" data-starter="weakness"><span data-starter-icon>♥</span><h3 data-starter-title>Me</h3><p data-starter-note>Your biggest weakness</p></article>
+                <article class="trait"><span>♥</span><h3>Girlfriend</h3><p>Somehow still tolerates him</p></article>
+            </div>
+            <button class="button button-primary next-screen" data-next="photo-one-section">Next surprise <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="photo-one-section" class="screen is-hidden" data-music="photo-one" aria-labelledby="photo-one-section-t"><div class="content-panel moment-panel">
+            <p class="eyebrow">Okay...</p><h2 id="photo-one-section-t">Enough making fun of you.</h2><p class="muted">Here, a reward.</p>
+            <div class="photo-frame"><img src="\images\IMG-20241115-WA0000.jpg" alt="Photo" data-fallback="Photo surprise #1"></div>
+            <div class=""><p class="caption">You're actually kinda cute.<br><small>Don't let this compliment get to your head.</small></p></div>
+            <button class="button button-primary next-screen" data-next="awards-section">Proceed to the awards <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="awards-section" class="screen is-hidden" data-music="awards" aria-labelledby="awards-title"><div class="content-panel awards-panel">
+            <p class="eyebrow">Tonight's extremely legitimate ceremony</p><h2 id="awards-title">THE BOYFRIEND AWARDS</h2>
+            <div id="award-card" class="award-card" aria-live="polite"><span id="award-icon" class="award-icon">🏆</span>
+                <p id="award-name" class="award-name">The envelope, please.</p><p id="award-note" class="muted">Five awards. One suspiciously obvious winner.</p></div>
+            <button id="reveal-award-btn" class="button button-primary">Reveal award <span aria-hidden="true">→</span></button>
+            <button id="awards-next-btn" class="button button-primary is-hidden">Continue <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="photo-two-section" class="screen is-hidden" data-music="photo-two" aria-labelledby="photo-two-section-t"><div class="content-panel moment-panel">
+            <p class="eyebrow">Plot twist</p><h2 id="photo-two-section-t">Evidence.</h2><p class="muted">Proof that you are not always serious. 😂</p><button class="button button-primary reveal-btn">REVEAL PHOTO <span aria-hidden="true">↓</span></button>
+            <div class="photo-frame is-hidden reveal-target"><img src="\images\Screenshot_2025-03-08-15-32-56-53_6012fa4d4ddec268fc5c7112cbb265e7.jpg" alt="Photo" data-fallback="Photo surprise #2"></div>
+            <div class="is-hidden reveal-target"><p class="caption">Okay, this one is actually one of my favorites. <span aria-hidden="true">♥</span></p></div>
+            <button class="button button-primary next-screen is-hidden reveal-target" data-next="shift-section">Continue <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="shift-section" class="screen is-hidden" data-slow data-music="why-i-love-you" aria-label="Okay..."><div class="content-panel final-panel">
+            <p class="eyebrow">Okay...</p>
+            <p class="lead slow-line">There is one thing I actually wanted to say.</p><p class="lead slow-line">I know you're upset with me.</p><p class="lead slow-line">And I know what happened made you feel jealous and disrespected.</p><p class="lead slow-line">I understand why that hurt you.</p><p class="lead slow-line">I never wanted you to feel like you weren't respected or valued by me.</p><p class="lead slow-line"><strong>You matter to me. A lot.</strong></p>
+            <button class="button button-primary next-screen slow-end is-hidden" data-next="apology-section">Continue →</button>
+        </div></section>
+
+        <section id="apology-section" class="screen is-hidden" data-slow data-music="sincere" aria-label="Just so you know"><div class="content-panel final-panel">
+            <p class="eyebrow">Just so you know</p>
+            <p class="lead slow-line">I'm not going to tell you that you shouldn't feel the way you feel.</p><p class="lead slow-line">I just want you to know that hurting you or making you feel disrespected was never my intention.</p><p class="lead slow-line"><strong>And I'm sorry for that. ♥</strong></p><p class="lead slow-line">Now... can my boyfriend please stop being angry with me? 🥺</p>
+            <button class="button button-primary next-screen slow-end is-hidden" data-next="photo-three-section">I'M TRYING 😭❤️</button>
+        </div></section>
+
+        <section id="photo-three-section" class="screen is-hidden" data-music="photo-three" aria-labelledby="photo-three-section-t"><div class="content-panel moment-panel">
+            <p class="eyebrow">One last thing...</p><h2 id="photo-three-section-t">Ready?</h2><button class="button button-primary reveal-btn">OPEN ❤️ <span aria-hidden="true">↓</span></button>
+            <div class="photo-frame is-hidden reveal-target"><img src="\images\IMG-20250131-WA0018.jpg" alt="Photo" data-fallback="Photo surprise #3"></div>
+            <div class="is-hidden reveal-target"><p class="caption">This is the person I wanted to celebrate today.<br><strong>You.</strong></p></div>
+            <button class="button button-primary next-screen is-hidden reveal-target" data-next="gift-section">Choose your gift <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="gift-section" class="screen is-hidden" data-music="gift" aria-labelledby="gift-title"><div class="content-panel gift-panel">
+            <p class="eyebrow">Choose carefully. 😌</p><h2 id="gift-title">YOU GET ONE GIFT.</h2>
+            <div class="gift-options">
+                <button class="gift-option" data-gift="food"><span>🍗</span><strong>Food date</strong></button>
+                <button class="gift-option" data-gift="gaming"><span>🎮</span><strong>Gaming date</strong></button>
+                <button class="gift-option" data-gift="me"><span>♥</span><strong>Me</strong><small>1 hour of my undivided attention</small></button>
+            </div>
+            <p id="gift-result" class="gift-result" aria-live="polite"></p>
+            <button id="gift-next-btn" class="button button-primary is-hidden">One last thing <span aria-hidden="true">→</span></button>
+        </div></section>
+
+        <section id="final-section" class="screen is-hidden" data-music="final" aria-labelledby="final-title"><div class="content-panel final-panel">
+            <div class="intro-mark" aria-hidden="true">♥</div>
+
+            <h2 id="final-title">ONE LAST THING…</h2>
+            <p class="lead">This one is just for you. ❤️</p>
+
+            <div class="love-letter">
+                <p class="love-intro">I could give you a hundred reasons why I love you, but honestly…</p>
+
+                <p>I don't think I could fit all of them on this little website. Because how do I fit <strong>five years of us</strong> into a few paragraphs?</p>
+
+                <p>I love you because you make ordinary days feel a little more special. Sometimes we don't even do anything exciting, but somehow, just talking to you becomes my favourite part of the day.</p>
+
+                <p>I love the way you annoy me, tease me, call me <em>gadhi</em>, <em>murkha</em>, and <em>kaleshi aurat</em>… and somehow still manage to make me smile when I'm trying my hardest to stay angry with you. 😂</p>
+
+                <p>I love how you can go from being completely obsessed with your game, to completely obsessed with food, to sleeping like the entire world can wait until you wake up. 😭😂</p>
+
+                <p>I love the comfortable version of us — the random conversations, the stupid jokes, the teasing, the little fights, the “I'm not talking to you” moments, and the moments where we don't even have to say anything.</p>
+
+                <p>I love that I can be completely myself around you. I can be dramatic, annoying, emotional, childish, or just completely weird… and somehow, you're still here. 🥺</p>
+
+                <p>We've laughed together. We've fought. We've annoyed each other. We've forgiven each other. We've grown together. And we've collected so many little memories that I'll probably carry with me forever.</p>
+
+                <p>And even when we don't agree, even when things get messy, even when one of us gets angry… you're still someone I choose.</p>
+
+                <p>Not because you're perfect.</p>
+
+                <p>But because you're <strong>you</strong>.</p>
+
+                <p>The gamer. The foodie. The sleepyhead. The annoying one. The person who calls me names and somehow gets away with it. 😂</p>
+
+                <p>And somehow… that's exactly the person I fell in love with. ❤️</p>
+
+                <p>So yes…</p>
+
+                <p><strong>I love you, idiot.</strong></p>
+
+                <p>More than I probably say.</p>
+
+                <p>More than you probably realize.</p>
+
+                <p>And definitely more than this little website could ever explain. 🥺❤️</p>
+
+                <p class="final-love">If I had to choose my favourite thing about us, it wouldn't be one particular memory.</p>
+
+                <p class="final-love">It would simply be <strong>us.</strong> ❤️</p>
+
+                <p>Because after all these years, you're still the person I want to tell everything to, laugh with, annoy, fight with, make memories with, and come back to.</p>
+
+                <p>And I hope you know that no matter how many times I tease you or pretend I'm angry… there is a very soft part of my heart that will always belong to you.</p>
+            </div>
+
+            <div class="song-block">
+                <p class="eyebrow">🎵 OUR LITTLE MOMENT</p>
+                <p class="song-title">Pehli Nazar Mein</p>
+                <button id="play-song-btn" class="button button-primary play-button">
+                    <span aria-hidden="true">▶</span> Play Our Song
+                </button>
+                <p id="song-status" class="muted" aria-live="polite">So just sit back, listen... and think of us for a few minutes. ❤️</p>
+            </div>
+
+            <div id="happy-message" class="is-hidden">
+                <p class="happy-message">HAPPY BOYFRIEND'S DAY, MY LOVE ♥</p>
+                <p class="lead">Thank you for being my favourite person, my biggest headache, and one of the best parts of my life. 🥺❤️</p>
+                <p class="lead">Now stop being angry with me. 😭</p>
+                <p id="love-line" class="happy-message is-hidden">I love you, idiot. ♥</p>
+                <p class="signature">— Your kaleshi aurat ❤️</p>
+            </div>
+        </div></section>
+    </main>
+
+    <div id="heart-layer" class="heart-layer" aria-hidden="true"></div>
+    <span id="heart-cursor" class="heart-cursor" aria-hidden="true">♥</span>
+    <script src="scripts.js"></script>
+</body>
+</html>
