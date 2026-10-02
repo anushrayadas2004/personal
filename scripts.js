@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const sceneMusic = {
         main: {
-            label: "Hawayein",
-            file: "song\\Hawayein Jab Harry Met Sejal (original Motion Picturetrack) 128 Kbps.mp3"
+            label: "Tera Naam Doon",
+            file: "song/Tera Naam Doon Entertainment 128 Kbps.mp3"
         },
 
         final: {
@@ -328,38 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return question.accepted.indexOf(answerIndex) === -1 ? "Nope, try again 😌" : "";
     }
 
-    async function emailQuizAnswers() {
-        const status = document.getElementById("quiz-email-status");
-        const submission = {
-            _subject: "Boyfriend's Day Quiz Answers",
-            _template: "table",
-            _captcha: "false"
-        };
-        questions.forEach(function (question, index) {
-            submission["Question " + (index + 1)] = question.question;
-            submission["Answer " + (index + 1)] = question.answers[quizAnswers[index]];
-        });
-
-        status.textContent = "Sending your answers...";
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/anushrayadas@gmail.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(submission)
-            });
-            const result = await response.json();
-            if (!response.ok || result.success === false || result.success === "false") {
-                throw new Error("Email service rejected the submission");
-            }
-            status.textContent = "Submission accepted. If this is your first submission, confirm FormSubmit's activation email in your inbox to enable delivery. ♥";
-        } catch (error) {
-            status.textContent = "Could not send the answers. Check your internet connection and try again. ♥";
-        }
-    }
-
     nextButton.addEventListener("click", function () {
         if (selectedAnswer === null || questions[currentQuestion].accepted.indexOf(selectedAnswer) === -1) return;
         currentQuestion++;
@@ -369,7 +337,6 @@ document.addEventListener("DOMContentLoaded", function () {
             showQuestion();
         } else {
             showSection("result-section");
-            emailQuizAnswers();
         }
     });
 
